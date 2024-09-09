@@ -1,0 +1,94 @@
+.h5{
+    font-weight: bold;
+    font-size: 13px;
+    color: #b31739;
+}
+.h1{
+    font-weight: bold;
+    font-size: 23px;
+    color: #fff;
+}
+.presentation{
+    background-color: #212525;
+    padding: 2.5% 2%;
+    width: 100%;
+}
+.desc{
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+}
+.description{
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    min-width: 150px;
+    max-width: 250px;
+    padding: 10px;
+}
+.post{
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.name{
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+.num{
+    font-weight: bold;
+    color: #333333;
+    margin: 20px 0px;
+    font-size: 12px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.memberContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 5px;
+    position: relative;
+}
+.member{
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+.member:hover{
+    transform: scale(1.05);
+}
+.member:nth-child(2),.member:nth-child(4){
+    margin-top: 150px;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* S'assure que l'élément superposé est au-dessus des autres */
+    pointer-events: none; /* Permet de cliquer à travers cet élément */
+}
+
+/* skill */
+
+.BGimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/images/16.jpg');
+}
+  
