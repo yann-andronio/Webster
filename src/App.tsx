@@ -1,15 +1,12 @@
 import { Fragment } from 'react';
-import s from "./App.module.css";
-import Home from './Pages/Home/Home';
-
+import Team from './Pages/Home/team';
+import Skill from './Pages/Home/skills';
 
 function App() {
   return (
     <Fragment>
-      <div className={`${s.Home}`}>
-        <Home />
-      </div>
-    
+        <Team/>
+        <Skill/>
     </Fragment>
   );
 }
