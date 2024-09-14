@@ -1,6 +1,7 @@
 import { Fragment } from "react/jsx-runtime";
 import s from "../../css/team.module.css";
-import TeamDesc from "./teamDesc";
+import TeamDesc from "../teamDesc/teamDesc";
+
 function Team(){
     return(
         <Fragment>
@@ -9,7 +10,7 @@ function Team(){
                 <h1 className={s.h1}>PRESENTATION DE L'EQUIIPE</h1>
                 <p className={s.desc}>Ensemble, on crée l'excellence </p>
 
-                <TeamDesc/>
+              <TeamDesc />
             </div>
         </Fragment>
     );

@@ -2,9 +2,9 @@ import { Fragment } from "react";
 import s from "../../css/team.module.css";
 function Skill(){
 
-    const langages = [
-        {}
-    ]
+    // const langages = [
+    //     {}
+    // ]
     return(
         <Fragment>
             <div className={s.BGimg}>

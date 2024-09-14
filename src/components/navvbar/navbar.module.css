@@ -1,0 +1,21 @@
+:root {
+    --color-link-navbar: #f8fafc;
+
+
+}
+
+.colorLinkNavbar {
+    color: var(  --color-link-navbar);
+    cursor: pointer;
+}
+
+.activeLink {
+   
+    background-color: #ff4d4d; 
+    color: #fff;
+  }
+  
+  .inactiveLink {
+    
+ color: var(  --color-link-navbar); ;
+  }

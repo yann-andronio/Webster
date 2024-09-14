@@ -1,12 +1,10 @@
 import { Fragment } from 'react';
-import Team from './Pages/Home/team';
-import Skill from './Pages/Home/skills';
+import Home from './Pages/Home/Home';
 
 function App() {
   return (
     <Fragment>
-        <Team/>
-        <Skill/>
+      <Home />
     </Fragment>
   );
 }
