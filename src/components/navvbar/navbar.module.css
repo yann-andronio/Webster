@@ -1,21 +1,35 @@
 :root {
     --color-link-navbar: #f8fafc;
-
-
+    --color-background : #323131 ; 
 }
 
-.colorLinkNavbar {
-    color: var(  --color-link-navbar);
-    cursor: pointer;
+
+.nav{
+    background-color: var(--color-background);
 }
 
 .activeLink {
-   
-    background-color: #ff4d4d; 
-    color: #fff;
-  }
-  
-  .inactiveLink {
+    color: #ff4d4d;
+}
+
+.inactiveLink {
+    color: var(--color-link-navbar);
+    cursor: pointer;
     
- color: var(  --color-link-navbar); ;
-  }
+}
+
+
+
+.nav {
+
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+    background-color: var(--color-background); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+    
