@@ -6,8 +6,8 @@ const Header: React.FC = () => {
   return (
     <Fragment>
       <Navbar />
-      <div className={`${s.BoxprentBg}`}>
-      <div className={`${s.ChildBox}  w-full sm:w-3/4 lg:w-2/4 pl-4 sm:pl-16 lg:pl-28 pt-24 sm:pt-32 lg:pt-40 pr-4 sm:pr-16 lg:pr-32 `}   >
+      <div className={`${s.BoxprentBg}`}   id="Accueil">
+        <div className={`${s.ChildBox}  w-full sm:w-3/4 lg:w-2/4 pl-4 sm:pl-16 lg:pl-28 pt-24 sm:pt-32 lg:pt-40 pr-4 sm:pr-16 lg:pr-32 `}   >
 
           <div className={s.text}>
             <p className='text-3xl text-white mb-1 font-mono'>FREE</p>

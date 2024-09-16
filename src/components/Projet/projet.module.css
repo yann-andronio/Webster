@@ -16,15 +16,9 @@
   
   }
   
-  .slideContent {
+  .customPagination {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 400px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+    margin-top: 20px; 
+   color: yellow;
   }
-  

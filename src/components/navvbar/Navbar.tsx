@@ -46,14 +46,14 @@ const Navbar: React.FC = () => {
             <li
               onClick={() => handleClick('Accueil')}
               className={`${s.link} ${s.colorLinkNavbar} ${isClick === 'Accueil' ? s.activeLink : s.inactiveLink}`}
-              id="Accueil"
+             
             >
               <RiHome3Line className="inline-block mr-2" /> Accueil
             </li>
             <li
               onClick={() => handleClick('Services')}
               className={` ${isClick === 'Services' ? s.activeLink : s.inactiveLink}`}
-              id="Services"
+             
             >
               <RiServiceLine className="inline-block mr-2" /> Services
             </li>
