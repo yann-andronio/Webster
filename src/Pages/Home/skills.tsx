@@ -40,10 +40,10 @@ function Skill(){
                 <h1 className={s.h1} style={{margin:25}}>LANGAGE DE PROGRAMMATION</h1>
                 <div className={s.skillContainer}>
                     {langages.map((item,index) =>
-                        <div key={index} 
-                        style={{width:100,
-                                marginLeft: index >= 3 ? '100%':'0'
-                                }} 
+                        <div key={index}  
+                           style={{
+                                width: index >=3 ? 1000:"auto"
+                           }}
                         className={s.language}>
                             <img src={item.logo} alt={item.name} 
                                 className={s.langageImg}
