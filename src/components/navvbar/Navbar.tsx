@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import s from './navbar.module.css'; // Optionnel: Typage du CSS
+import s from './navbar.module.css'; 
 import { FaBars } from 'react-icons/fa';
 import { RiHome3Line, RiServiceLine, RiMailLine } from 'react-icons/ri';
 import { FaProjectDiagram } from 'react-icons/fa';
