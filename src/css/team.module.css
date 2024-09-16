@@ -12,6 +12,7 @@
     background-color: #212525;
     padding: 2.5% 2%;
     width: 100%;
+    
 }
 .desc{
     color: #fff;
@@ -87,8 +88,13 @@
 
 .BGimg{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url('../assets/images/16.jpg');
+}
+.langageImg{
+    height: 60%;
+    width: 60%;
 }
   
