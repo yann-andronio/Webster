@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
     <nav className={s.nav}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-          Webmaster
+          Webster
         </span>
 
         <button
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
         </button>
 
         <div className={`${isOpen ? 'block' : 'hidden'} ${s.box_link} w-full md:block md:w-auto`} id="navbar-default">
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4  md:flex-row md:space-x-8 rtl:space-x-reverse">
+          <ul className="font-medium flex flex-col p-4 md:p-0   md:flex-row md:space-x-8 rtl:space-x-reverse">
             <li
               onClick={() => handleClick('Accueil')}
               className={`${s.link} ${s.colorLinkNavbar} ${isClick === 'Accueil' ? s.activeLink : s.inactiveLink}`}
@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
             <li
               onClick={() => handleClick('Projets')}
               className={` ${isClick === 'Projets' ? s.activeLink : s.inactiveLink}`}
-              id="Projets"
+             
             >
               <FaProjectDiagram className="inline-block mr-2" /> Projets
             </li>
