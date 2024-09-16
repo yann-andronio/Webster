@@ -13,7 +13,7 @@ function TeamDesc(){
             image: sammy,
             post: "Designer",
             color:"blue",
-            description: "Conçoit l'apparence visuelle et l'ergonomie des interfaces(UX/UI),crée les maquettes et les prototypes."
+            description: "Conçoit l'apparence visuelle et l'ergonomie des interfaces(UX/UI),"
         },
         {
             id: 2,
@@ -21,7 +21,7 @@ function TeamDesc(){
             image: iannis,
             post: "Back-end",
             color: "yellow",
-            description: "En charge de l'intégration d'API et de la gestion des bases de données (SQL ou NoSQL),et de la mise en place d'authentification."
+            description: "En charge de l'intégration d'API et de la gestion des bases de données (SQL ou NoSQL)"
         },
         {
             id: 3,
@@ -37,7 +37,7 @@ function TeamDesc(){
             image: andro,
             post: "Front-end",
             color: "red",
-            description: " Transforme les maquettes en pages web dynamiques en utilisant React, HTML, CSS, et JavaScript. veille à ce que les sites soient esthétiques, performants."
+            description: " Transforme les maquettes en pages web dynamiques en utilisant React."
         }
     ]
 

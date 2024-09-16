@@ -11,8 +11,7 @@
 .presentation{
     background-color: #212525;
     padding: 2.5% 2%;
-    width: 100%;
-    
+    width: 100%; 
 }
 .desc{
     color: #fff;
@@ -22,15 +21,18 @@
 .description{
     color: #fff;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 12px;
-    min-width: 150px;
-    max-width: 250px;
-    padding: 10px;
+   
+    width: 120px;
 }
 .post{
     color: #fff;
     font-weight: bold;
     font-size: 12px;
+    margin-top: 50px;
 }
 
 .name{
@@ -51,28 +53,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 150px;
+    left: 90px;
 }
 .memberContainer{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 10px 5px;
-    position: relative;
 }
 .member{
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
+    width: 200px;
+    margin-left: -80px;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    position: relative;
     transition: transform 0.2s ease-in-out;
 }
 .member:hover{
     transform: scale(1.05);
 }
-.member:nth-child(2),.member:nth-child(4){
-    margin-top: 150px;
+.member:nth-child(4){
+    margin-top:45px;
+    margin-left: -70px;
+} 
+.member:nth-child(2){
+    margin-top:135px;
+}
+.member:nth-child(3){
+    margin-top: 155px;
+    margin-left: -60px;
 }
 .overlay {
     position: absolute;
