@@ -51,19 +51,20 @@ const Navbar: React.FC = () => {
               <RiHome3Line className="inline-block mr-2" /> Accueil
             </li>
             <li
-              onClick={() => handleClick('Projets')}
-              className={` ${isClick === 'Projets' ? s.activeLink : s.inactiveLink}`}
-              id="Projets"
-            >
-              <FaProjectDiagram className="inline-block mr-2" /> Projets
-            </li>
-            <li
               onClick={() => handleClick('Services')}
               className={` ${isClick === 'Services' ? s.activeLink : s.inactiveLink}`}
               id="Services"
             >
               <RiServiceLine className="inline-block mr-2" /> Services
             </li>
+            <li
+              onClick={() => handleClick('Projets')}
+              className={` ${isClick === 'Projets' ? s.activeLink : s.inactiveLink}`}
+              id="Projets"
+            >
+              <FaProjectDiagram className="inline-block mr-2" /> Projets
+            </li>
+           
             <li
               onClick={() => handleClick('Apropos')}
               className={` ${isClick === 'Apropos' ? s.activeLink : s.inactiveLink}`}
