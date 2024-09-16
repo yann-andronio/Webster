@@ -1,0 +1,31 @@
+.name{
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+.BGimg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/images/16.jpg');
+}
+.h1{
+    font-weight: bold;
+    font-size: 23px;
+    color: #fff;
+}
+.language{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.skillContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
