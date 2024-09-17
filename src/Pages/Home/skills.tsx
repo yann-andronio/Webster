@@ -41,12 +41,10 @@ function Skill(){
                 <div className={s.skillContainer}>
                     {langages.map((item,index) =>
                         <div key={index}  
-                           style={{
-                                width: index >=3 ? 1000:"auto"
-                           }}
                         className={s.language}>
                             <img src={item.logo} alt={item.name} 
                                 className={s.langageImg}
+
                             />
                             <div className={s.name}>{item.name}</div>
                         </div>    
