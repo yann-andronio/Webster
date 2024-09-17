@@ -51,19 +51,17 @@ const Contact: React.FC = ()=>{
                             />
                         </div>
                         <textarea  
-                                onChange={handleMessage}
-                                value={message}
-                                className={`${s.messageField} mt-3 p-1 rounded-sm font-bold text-white placeholder-gray-200`}
-                                placeholder="message" 
-                                rows={4} 
-                                cols={49}>  
-                            
+                            onChange={handleMessage}
+                            value={message}
+                            className={`${s.messageField} mt-3 p-1 rounded-sm font-bold text-white placeholder-gray-200`}
+                            placeholder="message" 
+                            rows={4} 
+                            cols={49}>  
                         </textarea>
 
-                        <input type="submit" value="Envoyer" className={`${s.submitField} pr-10 pl-10 pb-1 pt-1 mt-3 rounded-sm font-bold text-white`} />
+                        <input type="submit" value="Envoyer" 
+                            className={`${s.submitField} pr-10 pl-10 pb-1 pt-1 mt-3 rounded-sm font-bold text-white self-end`} />
                     </div>
-
-                    
                 </form>
             </div>
         </Fragment>
