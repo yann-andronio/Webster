@@ -19,14 +19,20 @@
     font-size: 12px;
 }
 .description{
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.description p{
     color: #fff;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
-   
-    width: 120px;
+    font-size: 13px;
+    font-weight: bold;
+    width: 130px;
 }
 .post{
     color: #fff;
@@ -38,7 +44,8 @@
 .name{
     color: #fff;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 .num{
     font-weight: bold;
@@ -88,18 +95,8 @@
 .member:nth-child(3){
     margin-top: 155px;
     margin-left: -60px;
-}
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* S'assure que l'élément superposé est au-dessus des autres */
-    pointer-events: none; /* Permet de cliquer à travers cet élément */
-}
 
-/* skill */
+}
 
 
 .langageImg{

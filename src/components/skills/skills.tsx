@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import s from "../../css/skill.module.css";
+import s from "./skill.module.css";
 import html5 from "../../assets/images/HTML5.png";
 import css3 from "../../assets/images/CSS3.png";
 import Js from "../../assets/images/javascript-64.png";
@@ -9,8 +9,6 @@ import ReactIco from "../../assets/images/react-native-96.png";
 import nodeIco from "../../assets/images/node-js.png";
 
 function Skill(){
-
-
     const langages = [
         {
             logo: html5, name: "HTML"

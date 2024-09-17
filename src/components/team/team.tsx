@@ -1,5 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
-import s from "../../css/team.module.css";
+import s from "./team.module.css"
 import TeamDesc from "../teamDesc/teamDesc";
 
 function Team(){

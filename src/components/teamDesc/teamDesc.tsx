@@ -1,5 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
-import s from "../../css/team.module.css";
+import s from "../team/team.module.css"
 import sammy from "../../assets/images/sammy.png";
 import iannis from "../../assets/images/Iannis.png";
 import tahiana from "../../assets/images/10.png";
@@ -57,7 +57,9 @@ function TeamDesc(){
                             {item.name}    
                         </div>         
                         <div className={s.description} >
-                            {item.description}
+                            <p>
+                                {item.description}
+                            </p>
                         </div>
                     </div>    
                 )}

@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('../assets/images/16.jpg');
+    background-image: url("../../assets/images/16.jpg");
 }
 .h1{
     font-weight: bold;
@@ -35,6 +35,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 420px;
+    width: 415px;
     gap: 35px;
 }

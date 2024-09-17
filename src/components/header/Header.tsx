@@ -16,7 +16,7 @@ const Header: React.FC = () => {
           </div>
 
           <div className={`${s.description} pt-12`}>
-            <p className={` text-white w-3/4 text-base  `} >Chez Webster, nous créons des sites web sur mesure qui propulsent votre entreprise vers le succès. Innovation, performance et design sont au cœur de tout ce que nous faisons pour offrir une expérience en ligne exceptionnelle.</p>
+            <p className={` text-white w-3/4 text-base font-bold`} >Chez Webster, nous créons des sites web sur mesure qui propulsent votre entreprise vers le succès. Innovation, performance et design sont au cœur de tout ce que nous faisons pour offrir une expérience en ligne exceptionnelle.</p>
 
           </div>
         </div>
