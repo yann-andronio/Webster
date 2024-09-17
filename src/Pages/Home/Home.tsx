@@ -4,6 +4,7 @@ import Skill from '../../components/skills/skills'
 import Header from '../../components/header/Header'
 import Service from '../../components/servicess/Service'
 import Projet from '../../components/Projet/Projet'
+import Contact from '../../components/contact/contact'
 
 export default function Home() {
     return (
@@ -14,6 +15,7 @@ export default function Home() {
             <Projet />
             <Team />
             <Skill />
+            <Contact/>
         </Fragment>
     )
 }
