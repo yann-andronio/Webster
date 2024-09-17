@@ -10,6 +10,7 @@ import nodeIco from "../../assets/images/node-js.png";
 
 function Skill(){
 
+
     const langages = [
         {
             logo: html5, name: "HTML"
@@ -33,6 +34,7 @@ function Skill(){
             logo: nodeIco,name: "Node.js"
         }
     ]
+
 
     return(
         <Fragment>

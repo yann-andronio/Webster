@@ -1,0 +1,59 @@
+:root {
+    --color-background: #1f1f1f;
+  }
+  
+  .Container {
+    background-color: var(--color-background);
+    color: #fff; 
+  }
+  
+  .ServiceGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1.5rem; 
+  }
+  
+  .ServiceCard {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #555; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .ServiceCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .ServiceCard .mb-4 {
+    color: #4A90E2;
+  }
+  
+  h2, h3 {
+    color: #fff; 
+  }
+  
+  p {
+    color: #ccc;
+  }
+  
+
+  @media (max-width: 1200px) {
+    .ServiceGrid {
+      grid-template-columns: repeat(3, 1fr); 
+    }
+  }
+  
+  /* ecran phone kely*/
+  @media (max-width: 768px) {
+    .ServiceGrid {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+  
+  /* ecran phone kely be*/
+  @media (max-width: 480px) {
+    .ServiceGrid {
+      grid-template-columns: 1fr; 
+    }
+  }
