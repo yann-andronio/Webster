@@ -43,7 +43,7 @@ function TeamDesc(){
 
     return(
         <Fragment>
-            <div className={s.memberContainer}>
+            <div className={`${s.memberContainer}`}>
                 {members.map((item) => 
                     <div key={item.id} className={`${s.member} `}>
                         <img src={item.image} alt={item.name} style={{height:150,width:150,borderRadius:70}} />  
