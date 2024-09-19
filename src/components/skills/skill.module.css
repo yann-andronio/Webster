@@ -39,3 +39,21 @@
     width: 415px;
     gap: 35px;
 }
+@media (max-width:430px) and (min-width:320px){
+    .BGimg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .language{
+        height: 50px;
+        width: 50px;
+    }
+    .skillContainer{
+        gap: 20px;
+        width: 250px;
+    }
+    .name{
+        font-size: 13px;
+    }
+}
