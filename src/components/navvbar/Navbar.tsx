@@ -91,14 +91,14 @@ const Navbar: React.FC = () => {
             <li
               onClick={() => handleClick('Apropos')}
               className={`${activeLink === 'Apropos' ? s.activeLink : s.inactiveLink}`}
-              id="Apropos"
+            
             >
               <AiOutlineInfoCircle className="inline-block mr-2" /> A propos
             </li>
             <li
               onClick={() => handleClick('Contact')}
               className={`${activeLink === 'Contact' ? s.activeLink : s.inactiveLink}`}
-              id="Contact"
+              
             >
               <RiMailLine className="inline-block mr-2" /> Contact
             </li>

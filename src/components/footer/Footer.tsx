@@ -9,7 +9,7 @@ import paypal from "../../assets/images/paypal.png";
 const Footer: React.FC = () =>{
     return(
         <Fragment >
-            <footer className={s.footer}>
+            <footer id="Contact" className={s.footer}>
                 <div className={s.footerContainer}>
                     <div className='mt-11'>
                         <h3 className='text-white text-3xl font-bold italic'>Webster</h3>
