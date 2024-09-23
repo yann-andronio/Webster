@@ -4,9 +4,13 @@ import { Fragment } from "react";
 import s from "./contact.module.css";
 
 const Contact: React.FC = ()=>{
+    //Etat de configuration des champs du formulaier
     const [name,setName] = useState<string>('');
     const [mail,setMail] = useState<string>('');
     const [message,setMessage] = useState<string>('');
+
+    //Etat pour gerer les erreurs et les status
+    const [errors,setErrors] = useState({});
 
     const handleName = (e: React.ChangeEvent<HTMLInputElement>)=>{
         setName(e.target.value);
@@ -18,6 +22,20 @@ const Contact: React.FC = ()=>{
     
     const handleMessage = (e: React.ChangeEvent<HTMLTextAreaElement>)=>{
         setMessage(e.target.value);
+    }
+
+    const validate: any = () => {
+        const newErrors: any = {};
+
+        if(!name.trim()){
+            newErrors.name = "Le champ nom est requis"    
+        }
+        if(!mail.trim()){
+            newErrors.mail = "Le champ mail est requis"
+        }else if(!/\S+@\S+\.\S+/.test(mail)){
+            newErrors.mail = "L'email est invalide"
+        }
+
     }
 
     return(
