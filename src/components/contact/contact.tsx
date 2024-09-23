@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEvent } from "react";
 import {useState} from "react";
 import { Fragment } from "react";
 import s from "./contact.module.css";
@@ -10,7 +10,7 @@ const Contact: React.FC = ()=>{
     const [message,setMessage] = useState<string>('');
 
     //Etat pour gerer les erreurs et les status
-    const [errors,setErrors] = useState({});
+    const [errors,setErrors] = useState<any>({});
 
     const handleName = (e: React.ChangeEvent<HTMLInputElement>)=>{
         setName(e.target.value);
@@ -24,62 +24,37 @@ const Contact: React.FC = ()=>{
         setMessage(e.target.value);
     }
 
-    const validate: any = () => {
+
+    const validate = () => {
         const newErrors: any = {};
 
         if(!name.trim()){
-            newErrors.name = "Le champ nom est requis"    
+            newErrors.name = "Le champ nom est requis";
         }
         if(!mail.trim()){
             newErrors.mail = "Le champ mail est requis"
-        }else if(!/\S+@\S+\.\S+/.test(mail)){
-            newErrors.mail = "L'email est invalide"
+        }else if(!/^[a-zA-Z]+@[a-zA-z]+\.[a-zA-z]/.test(mail)){
+            newErrors.mail = "L'email est invalide";
         }
-
         if(!message.trim()){
-            newErrors.message = "Le champ message est requis"
+            newErrors.message = "Le champ message est requis";
         }
 
         return newErrors;
-
     }
 
-    const handleSubmit = async (e:any)=>{
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
-        const validationErrors = validate();
-
+        const validationErrors = validate(); 
+        setErrors(validationErrors);
+        
         if(Object.keys(validationErrors).length > 0){
-            setErrors(validationErrors);
             return;
         }
-        //Reinitiliser les erreurs liée à la soumission des champs
-        setErrors({});
-
-        const dataForm = {name,mail,message}
-
-        try{
-            const response = await fetch("http://localhost:3000/contact", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(dataForm)
-            });
-
-
-            if(response.ok){
-
-                setName("");
-                setMail("");
-                setMessage("");
-            }
-        }catch(err){
-            console.error("Erreur lors de la soumission du formulaire :",err);
-           
-        }
-
+        setName("");
+        setMail("");
+        setMessage("");
     }
-
     return(
         <Fragment >
             <div className={s.infoContainer}>
@@ -101,19 +76,26 @@ const Contact: React.FC = ()=>{
                                     placeholder="Nom" 
                                     onChange={handleName}
                                     value={name}  
-                                    className={`${s.inputField} p-2 border rounded-sm font-bold text-white placeholder-gray-200`}     
+                                    className={`${s.inputField} p-2 border rounded-sm font-bold text-white placeholder`}     
                             />
                             <input type="text" 
                                     placeholder="Email"
                                     onChange={handleMail}
                                     value={mail}   
-                                    className={`${s.inputField} p-2 border rounded-sm font-bold text-white placeholder-gray-200`}     
+                                    className={`${s.inputField} p-2 border rounded-sm font-bold text-white `}     
                             />
+                            
                         </div>
+                        {Object.keys(errors).length > 0 ?
+                            <div className='mt-1 mb-1'>
+                                <p className='text-red-500 text-xs'>{errors.name}</p>
+                                <p className='text-red-500 text-xs'>{errors.mail}</p>
+                                <p className='text-red-500 text-xs'>{errors.message}</p>
+                            </div>: null}
                         <textarea  
                             onChange={handleMessage}
                             value={message}
-                            className={`${s.messageField} mt-3 p-1 rounded-sm font-bold text-white placeholder-gray-200`}
+                            className={`${s.messageField} mt-3 p-1 rounded-sm font-bold text-white`}
                             placeholder="message" 
                             rows={4} 
                             cols={49}>  
