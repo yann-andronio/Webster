@@ -36,6 +36,48 @@ const Contact: React.FC = ()=>{
             newErrors.mail = "L'email est invalide"
         }
 
+        if(!message.trim()){
+            newErrors.message = "Le champ message est requis"
+        }
+
+        return newErrors;
+
+    }
+
+    const handleSubmit = async (e:any)=>{
+        e.preventDefault();
+        const validationErrors = validate();
+
+        if(Object.keys(validationErrors).length > 0){
+            setErrors(validationErrors);
+            return;
+        }
+        //Reinitiliser les erreurs liée à la soumission des champs
+        setErrors({});
+
+        const dataForm = {name,mail,message}
+
+        try{
+            const response = await fetch("http://localhost:3000/contact", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataForm)
+            });
+
+
+            if(response.ok){
+
+                setName("");
+                setMail("");
+                setMessage("");
+            }
+        }catch(err){
+            console.error("Erreur lors de la soumission du formulaire :",err);
+           
+        }
+
     }
 
     return(
@@ -52,7 +94,7 @@ const Contact: React.FC = ()=>{
                     <h5 className='font-semibold text-white'>N'hesitez pas à nous contacter pour un devis</h5>
                 </div>
 
-                <form action="">
+                <form onSubmit={handleSubmit}>
                     <div className={s.formContainer}>
                         <div className={s.inputContainer}>
                             <input type="text" 
