@@ -24,7 +24,7 @@ const Contact: React.FC = ()=>{
         setMessage(e.target.value);
     }
 
-
+    // S'assure que tous les champs sont valides
     const validate = () => {
         const newErrors: any = {};
 
@@ -39,22 +39,40 @@ const Contact: React.FC = ()=>{
         if(!message.trim()){
             newErrors.message = "Le champ message est requis";
         }
-
+        //retourne un objet qui contient les evenetuels erreuers de chaque champs
         return newErrors;
     }
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) =>{
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
+
+        const formData = {name,mail,message};
         const validationErrors = validate(); 
+        //Mets à jour l'etat des erreurs 
         setErrors(validationErrors);
         
+        // Si l'objet n'est pas vide(Contient des erreurs liée au champ) ,alors on sort de la fonction 
         if(Object.keys(validationErrors).length > 0){
             return;
         }
+       
+        fetch("http://localhost:3000/contact",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        }).then(res => res.json())
+        .then(data => console.log("Les données envoyées sont : ",data))
+        .catch((err)=>console.error("Erreur lors de l'envoie des données",err));
+
+
         setName("");
         setMail("");
         setMessage("");
     }
+
+    
     return(
         <Fragment >
             <div className={s.infoContainer}>
