@@ -38,8 +38,8 @@ app.post("/contact",async (req,res) => {
 
     //Send email here ...
     try{
-         transporteur.sendMail(mailOptions);
-         
+        transporteur.sendMail(mailOptions);
+
         console.log("Mail envoyé avec succes:");
         console.log(`Nom: ${name} et mail: ${mail} et message: ${message}`);
 
