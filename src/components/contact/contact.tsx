@@ -1,5 +1,7 @@
 import React, { FormEvent } from "react";
 import {useState} from "react";
+import { Bounce, ToastContainer,toast } from "react-toastify";
+import 'react-toastify/ReactToastify.css';
 import { Fragment } from "react";
 import s from "./contact.module.css";
 
@@ -63,10 +65,26 @@ const Contact: React.FC = ()=>{
             },
             body: JSON.stringify(formData)
         }).then(res => res.json())
-        .then(data => console.log("Les données envoyées sont : ",data))
-        .catch((err)=>console.error("Erreur lors de l'envoie des données",err));
-
-
+        .then((data) => {
+            console.log("Les données envoyées sont : ",data);
+            toast.success("Email envoyé",{
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: true,
+                transition: Bounce,
+                theme: "colored"
+            })
+        })
+        .catch((err)=>{
+            console.error("Erreur lors de l'envoie des données",err);
+            toast.error("Erreur de l'envoi de l'email",{
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: true,
+                transition: Bounce,
+                theme: "colored"
+            })
+        });
         setName("");
         setMail("");
         setMessage("");
@@ -124,6 +142,7 @@ const Contact: React.FC = ()=>{
                     </div>
                 </form>
             </div>
+            <ToastContainer/>
         </Fragment>
     );
 
