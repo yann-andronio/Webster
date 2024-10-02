@@ -1,32 +1,16 @@
-<<<<<<< HEAD
-import React from "react";
-import { useState } from "react";
-import { Fragment } from "react";
+import React, { FormEvent, Fragment, useState } from "react";
 import s from "./contact.module.css";
 
 const Contact: React.FC = () => {
+    // État de configuration des champs du formulaire
     const [name, setName] = useState<string>('');
     const [mail, setMail] = useState<string>('');
     const [message, setMessage] = useState<string>('');
 
+    // État pour gérer les erreurs et les statuts
+    const [errors, setErrors] = useState<any>({});
+
     const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
-=======
-import React, { FormEvent } from "react";
-import {useState} from "react";
-import { Fragment } from "react";
-import s from "./contact.module.css";
-
-const Contact: React.FC = ()=>{
-    //Etat de configuration des champs du formulaier
-    const [name,setName] = useState<string>('');
-    const [mail,setMail] = useState<string>('');
-    const [message,setMessage] = useState<string>('');
-
-    //Etat pour gerer les erreurs et les status
-    const [errors,setErrors] = useState<any>({});
-
-    const handleName = (e: React.ChangeEvent<HTMLInputElement>)=>{
->>>>>>> Iannis
         setName(e.target.value);
     }
 
@@ -38,62 +22,57 @@ const Contact: React.FC = ()=>{
         setMessage(e.target.value);
     }
 
-<<<<<<< HEAD
-    return (
-=======
     // S'assure que tous les champs sont valides
     const validate = () => {
         const newErrors: any = {};
 
-        if(!name.trim()){
+        if (!name.trim()) {
             newErrors.name = "Le champ nom est requis";
         }
-        if(!mail.trim()){
-            newErrors.mail = "Le champ mail est requis"
-        }else if(!/^[a-zA-Z]+@[a-zA-z]+\.[a-zA-z]/.test(mail)){
+        if (!mail.trim()) {
+            newErrors.mail = "Le champ mail est requis";
+        } else if (!/^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]+$/.test(mail)) {
             newErrors.mail = "L'email est invalide";
         }
-        if(!message.trim()){
+        if (!message.trim()) {
             newErrors.message = "Le champ message est requis";
         }
-        //retourne un objet qui contient les evenetuels erreuers de chaque champs
+
+        // Retourne un objet qui contient les éventuels erreurs de chaque champ
         return newErrors;
     }
 
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) =>{
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const formData = {name,mail,message};
-        const validationErrors = validate(); 
-        //Mets à jour l'etat des erreurs 
+        const formData = { name, mail, message };
+        const validationErrors = validate();
+        // Mets à jour l'état des erreurs
         setErrors(validationErrors);
-        
-        // Si l'objet n'est pas vide(Contient des erreurs liée au champ) ,alors on sort de la fonction 
-        if(Object.keys(validationErrors).length > 0){
+
+        // Si l'objet n'est pas vide (contient des erreurs liées au champ), alors on sort de la fonction 
+        if (Object.keys(validationErrors).length > 0) {
             return;
         }
-       
-        fetch("http://localhost:3000/contact",{
+
+        fetch("http://localhost:3000/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(formData)
         }).then(res => res.json())
-        .then(data => console.log("Les données envoyées sont : ",data))
-        .catch((err)=>console.error("Erreur lors de l'envoie des données",err));
-
+            .then(data => console.log("Les données envoyées sont : ", data))
+            .catch((err) => console.error("Erreur lors de l'envoi des données", err));
 
         setName("");
         setMail("");
         setMessage("");
     }
 
-    
-    return(
->>>>>>> Iannis
-        <Fragment >
-            <div    className={s.infoContainer}>
+    return (
+        <Fragment>
+            <div className={s.infoContainer}>
                 <div style={{
                     display: "flex",
                     flexDirection: 'column',
@@ -102,13 +81,12 @@ const Contact: React.FC = ()=>{
                     marginTop: 45
                 }}>
                     <h1 className='font-bold text-3xl text-white'>POUR PLUS D'INFORMATIONS</h1>
-                    <h5 className='font-semibold text-white'>N'hesitez pas à nous contacter pour un devis</h5>
+                    <h5 className='font-semibold text-white'>N'hésitez pas à nous contacter pour un devis</h5>
                 </div>
 
                 <form onSubmit={handleSubmit}>
                     <div className={s.formContainer}>
                         <div className={s.inputContainer}>
-<<<<<<< HEAD
                             <input type="text"
                                 placeholder="Nom"
                                 onChange={handleName}
@@ -120,45 +98,21 @@ const Contact: React.FC = ()=>{
                                 onChange={handleMail}
                                 value={mail}
                                 className={`${s.inputField} p-2 border rounded-sm font-bold text-white placeholder-gray-200`}
-=======
-                            <input type="text" 
-                                    placeholder="Nom" 
-                                    onChange={handleName}
-                                    value={name}  
-                                    className={`${s.inputField} p-2 border rounded-sm font-bold text-white placeholder`}     
                             />
-                            <input type="text" 
-                                    placeholder="Email"
-                                    onChange={handleMail}
-                                    value={mail}   
-                                    className={`${s.inputField} p-2 border rounded-sm font-bold text-white `}     
->>>>>>> Iannis
-                            />
-                            
                         </div>
-<<<<<<< HEAD
-                        <textarea
-                            onChange={handleMessage}
-                            value={message}
-                            className={`${s.messageField} mt-3 p-1 rounded-sm font-bold text-white placeholder-gray-200`}
-                            placeholder="message"
-                            rows={4}
-                            cols={49}>
-=======
                         {Object.keys(errors).length > 0 ?
                             <div className='mt-1 mb-1'>
                                 <p className='text-red-500 text-xs'>{errors.name}</p>
                                 <p className='text-red-500 text-xs'>{errors.mail}</p>
                                 <p className='text-red-500 text-xs'>{errors.message}</p>
-                            </div>: null}
-                        <textarea  
+                            </div> : null}
+                        <textarea
                             onChange={handleMessage}
                             value={message}
                             className={`${s.messageField} mt-3 p-1 rounded-sm font-bold text-white`}
-                            placeholder="message" 
-                            rows={4} 
-                            cols={49}>  
->>>>>>> Iannis
+                            placeholder="message"
+                            rows={4}
+                            cols={49}>
                         </textarea>
 
                         <input type="submit" value="Envoyer"
@@ -166,11 +120,8 @@ const Contact: React.FC = ()=>{
                     </div>
                 </form>
             </div>
-
-            
         </Fragment>
     );
-
 }
 
 export default Contact;
