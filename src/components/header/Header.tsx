@@ -11,8 +11,8 @@ const Header: React.FC = () => {
 
           <div className={s.text}>
             <p className='text-3xl text-white mb-1 font-mono'>FREE</p>
-            <h1 className={`${s.name} text-8xl font-bold text-white  `}>Webster</h1>
-            <p className='text-3xl  text-white mt-1 ml-72 font-mono'>LANCE</p>
+            <h1 className={`${s.name} text-7xl font-bold text-white  `}>Webster</h1>
+            <p className={`${s.textbottom}text-7xl  text-white mt-1 ml-72 font-mono`}>LANCE</p>
           </div>
 
           <div className={`${s.description} pt-12`}>

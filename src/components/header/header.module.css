@@ -13,8 +13,15 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 
 }
 
-
-
 .description p{
     font-size: clamp(1rem , 2vw , 1rem);
+}
+
+@media (max-width:425px) {
+    .textbottom {
+        margin-left: 245px;
+    }
+    .name{
+        font-size: 100px;
+    }
 }
